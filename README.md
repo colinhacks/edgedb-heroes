@@ -49,6 +49,7 @@ node index.mjs
 
 Introspects the schema of an EdgeDB instance and generates a TypeScript/JavaScript query builder
 
+```
 CONNECTION OPTIONS:
 -I, --instance <instance>
 --dsn <dsn>
@@ -72,6 +73,7 @@ OPTIONS:
     --output-dir <output-dir>
     --force-overwrite
         If 'output-dir' already exists, will overwrite without confirmation
+```
 
 ## Testing
 
@@ -79,12 +81,14 @@ Things to test:
 
 - All statements: `select`, `insert`, `update`, `delete`
 - Advanced clauses: `on conflict`
+
 - Polymorphic queries
 - Set merging and literals (and whether type/cardinality is correct)
   - https://www.edgedb.com/docs/edgeql/sets
 - All functions and operators are available on the top-level `e` import
-- Deeply nested queries
-- Complex `with` behavior
-- Cardinality inference. These two cases are implemented:
+- Deep/complex queries associated perf or inference problems.
+- Complex `with` clauses
+- Cardinality inference via `filter/limit` clauses. These cases are implemented:
   - `e.eq(<exclusive property expr>, <singleton scalar expr>)`
   - `e.eq(<exclusive link expr>, <singleton object>)`
+  - `limit: 1`

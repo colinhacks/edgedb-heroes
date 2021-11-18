@@ -1,0 +1,26 @@
+{
+  "name": "heroes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "play": "ts-node index.ts",
+    "seed": "ts-node seed.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Colin McDonnell",
+  "license": "ISC",
+  "dependencies": {
+    "edgedb": "^0.17.0-alpha.2"
+  },
+  "resolutions": {
+    "edgedb": "./node_modules/edgedb"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}

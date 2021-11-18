@@ -9,6 +9,15 @@ async function run() {
   const expr = e.array([e.int64(23), e.int64(52)]);
   type expr = $infer<typeof expr>;
 
+  const arrg = e
+    .select(e.Person, (person) => ({
+      id: true,
+      name: true,
+      uppercase_name: e.str_upper(person.name),
+      is_hero: e.select(person.$is(e.Hero)),
+    }))
+    .run(client);
+
   // write query
   const QUERY = e.select(e.Hero, (hero) => ({
     id: false,
@@ -22,7 +31,13 @@ async function run() {
     }),
     movies: e.select(e.Movie, (movie) => ({
       title: true,
-      character_names: movie.characters.name,
+      characters: (char) => ({
+        name: true,
+        id: true,
+        // polymorphic fields
+        ...e.is(e.Hero, { secret_identity: true }),
+        ...e.is(e.Villain, { nemesis: true }),
+      }),
       filter: e.in(movie.characters, hero),
     })),
     filter: e.eq(hero.name, e.str('Captain America')),

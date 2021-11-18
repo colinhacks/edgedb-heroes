@@ -1,13 +1,13 @@
 import * as edgedb from 'edgedb';
-import e from './dbschema/edgeql';
+import e from './dbschema/edgeql/index.mjs';
 
 async function run() {
   console.time(`query`);
   const client = await edgedb.createClient();
   try {
     const QUERY = e.select(e.Hero, (hero) => ({
-      id: false,
-      name: true,
+      id: true,
+      name: false,
       computed: e.str_upper(hero.name),
       villains: (v) => ({
         id: true,
@@ -22,10 +22,8 @@ async function run() {
       })),
       filter: e.eq(hero.name, e.str('Captain America')),
     }));
-
     const result = await QUERY.run(client);
     console.log(JSON.stringify(result, null, 2));
-    type RESULT = typeof result;
   } catch (err) {
     console.log(err);
     throw err;

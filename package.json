@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "play": "ts-node index.ts",
+    "play": "tsc --incremental && node dist/index.js",
     "seed": "ts-node seed.ts",
-    "build": "tsc"
+    "build": "tsc --incremental"
   },
   "keywords": [],
   "author": "Colin McDonnell",
   "license": "ISC",
   "dependencies": {
-    "edgedb": "^0.17.0-alpha.2"
+    "edgedb": "^0.17.0-alpha.3"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.1",

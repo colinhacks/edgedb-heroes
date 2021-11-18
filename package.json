@@ -15,9 +15,6 @@
   "dependencies": {
     "edgedb": "^0.17.0-alpha.2"
   },
-  "resolutions": {
-    "edgedb": "./node_modules/edgedb"
-  },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.1",
     "ts-node": "^10.4.0",

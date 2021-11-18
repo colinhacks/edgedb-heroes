@@ -15,11 +15,12 @@ async function run() {
         upper: e.str_upper(v.name),
         nemesis_name: v.nemesis.name,
       }),
-      nested: e.select(e.Movie, (_) => ({
+      movies: e.select(e.Movie, (movie) => ({
         title: true,
-        characters: true,
+        character_names: movie.characters.name,
+        filter: e.in(movie.characters, hero),
       })),
-      filter: e.eq(hero.name, e.str('asdf')),
+      filter: e.eq(hero.name, e.str('Captain America')),
     }));
 
     const result = await QUERY.run(client);

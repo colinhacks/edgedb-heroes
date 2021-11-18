@@ -10,3 +10,5 @@ edgedb project init
 npx edgedb-generate
 yarn play
 ```
+
+- Write queries inside `index.ts`

@@ -10,7 +10,7 @@ module default {
   type Hero extending Person {
     property secret_identity -> str;
     multi link villains := .<nemesis[IS Villain];
-    single link movies := .<characters[is Movie];
+    link movies := .<characters[is Movie];
   }
 
   type Villain extending Person {
@@ -19,7 +19,7 @@ module default {
 
   type Movie {
     required property title -> str { constraint exclusive; }
-    required property release_year -> int64;
+    property release_year -> int64;
     multi link characters -> Person;
   }
 

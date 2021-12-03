@@ -3,6 +3,10 @@ import e from './dbschema/edgeql';
 
 async function run() {
   console.time(`query`);
+
+  const list = e.set(e.str('asdf'), e.str('qwer'), e.str('fghj'));
+  e.select({ list });
+
   const client = await edgedb.createClient();
   try {
     const QUERY = e.select(e.Hero, (hero) => ({

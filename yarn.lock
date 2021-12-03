@@ -59,9 +59,6 @@ diff@^4.0.1:
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
   integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
 
-edgedb@./node_modules/edgedb:
-  version "0.17.0-alpha.1"
-
 edgedb@^0.17.0-alpha.2:
   version "0.17.0-alpha.2"
   resolved "https://registry.yarnpkg.com/edgedb/-/edgedb-0.17.0-alpha.2.tgz#937e50615dda638233749ec2732fe3e8ca4c8ba8"

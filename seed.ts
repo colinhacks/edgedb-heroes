@@ -93,8 +93,8 @@ const movies = [
 ];
 
 async function run() {
-  const pool = await edgedb.createClient({
-    dsn: 'edgedb://...',
+  const pool = edgedb.createClient({
+    // dsn: 'edgedb://...',
   });
 
   try {

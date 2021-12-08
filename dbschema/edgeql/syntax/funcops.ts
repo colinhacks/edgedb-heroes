@@ -64,6 +64,7 @@ interface OverloadFuncDef {
 }
 
 export function $resolveOverload(
+  funcName: string,
   args: any[],
   typeSpec: introspect.Types,
   funcDefs: OverloadFuncDef[]
@@ -75,6 +76,7 @@ export function $resolveOverload(
 
   for (const def of funcDefs) {
     const resolvedOverload = _tryOverload(
+      funcName,
       positionalArgs,
       namedArgs,
       typeSpec,
@@ -84,10 +86,15 @@ export function $resolveOverload(
       return resolvedOverload;
     }
   }
-  throw new Error("No matching function overload found");
+  throw new Error(
+    `No function overload found for 'e.${
+      funcName.split("::")[1]
+    }()' with args: ${args.map(arg => `${arg}`).join(", ")}`
+  );
 }
 
 function _tryOverload(
+  funcName: string,
   args: (BaseTypeSet | undefined)[],
   namedArgs: {[key: string]: BaseTypeSet} | undefined,
   typeSpec: introspect.Types,
@@ -208,6 +215,16 @@ function _tryOverload(
     !funcDef.preservesOptionality
   ) {
     cardinality = cardinalityUtil.overrideLowerBound(cardinality, "Zero");
+  }
+
+  if (funcName === "std::if_else") {
+    cardinality = cardinalityUtil.multiplyCardinalities(
+      cardinalityUtil.orCardinalities(
+        positionalArgs[0].__cardinality__,
+        positionalArgs[2].__cardinality__
+      ),
+      positionalArgs[1].__cardinality__
+    );
   }
 
   return {

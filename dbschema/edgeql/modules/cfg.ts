@@ -1,13 +1,13 @@
 import { $ } from "edgedb";
 import * as _ from "../imports";
 import * as _std from "./std";
-export type $memory = $.ScalarType<"cfg::memory", unknown>;
+export type $memory = $.ScalarType<"cfg::memory", _.edgedb.ConfigMemory>;
 const memory: $memory = $.makeType<$memory>(_.spec, "00000000-0000-0000-0000-000000000130", _.syntax.literal);
 
 export type $ConfigObjectλShape = $.typeutil.flatten<_std.$BaseObjectλShape & {
 }>;
 type $ConfigObject = $.ObjectType<"cfg::ConfigObject", $ConfigObjectλShape, null>;
-const $ConfigObject = $.makeType<$ConfigObject>(_.spec, "4ba67440-5075-11ec-baa3-214d5875319f", _.syntax.literal);
+const $ConfigObject = $.makeType<$ConfigObject>(_.spec, "f093bf86-533a-11ec-97a4-5d19b1d4a6df", _.syntax.literal);
 
 const ConfigObject: $.$expr_PathNode<$.TypeSet<$ConfigObject, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($ConfigObject, $.Cardinality.Many), null, true);
 
@@ -26,7 +26,7 @@ export type $AbstractConfigλShape = $.typeutil.flatten<$ConfigObjectλShape & {
   "default_statistics_target": $.PropertyDesc<_std.$int64, $.Cardinality.AtMostOne, false, true>;
 }>;
 type $AbstractConfig = $.ObjectType<"cfg::AbstractConfig", $AbstractConfigλShape, null>;
-const $AbstractConfig = $.makeType<$AbstractConfig>(_.spec, "4bf5723e-5075-11ec-ba69-13061275b3a1", _.syntax.literal);
+const $AbstractConfig = $.makeType<$AbstractConfig>(_.spec, "f0ef9f7c-533a-11ec-8fb2-8da73461085e", _.syntax.literal);
 
 const AbstractConfig: $.$expr_PathNode<$.TypeSet<$AbstractConfig, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($AbstractConfig, $.Cardinality.Many), null, true);
 
@@ -42,7 +42,7 @@ export type $AuthλShape = $.typeutil.flatten<$ConfigObjectλShape & {
   "<auth": $.LinkDesc<$.ObjectType, $.Cardinality.Many, {}, false, false>;
 }>;
 type $Auth = $.ObjectType<"cfg::Auth", $AuthλShape, null>;
-const $Auth = $.makeType<$Auth>(_.spec, "4bdce0fc-5075-11ec-8f6f-f990ceb66bd7", _.syntax.literal);
+const $Auth = $.makeType<$Auth>(_.spec, "f0d18154-533a-11ec-ad9d-d1ab017089d2", _.syntax.literal);
 
 const Auth: $.$expr_PathNode<$.TypeSet<$Auth, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($Auth, $.Cardinality.Many), null, true);
 
@@ -51,42 +51,42 @@ export type $AuthMethodλShape = $.typeutil.flatten<$ConfigObjectλShape & {
   "<method": $.LinkDesc<$.ObjectType, $.Cardinality.Many, {}, false, false>;
 }>;
 type $AuthMethod = $.ObjectType<"cfg::AuthMethod", $AuthMethodλShape, null>;
-const $AuthMethod = $.makeType<$AuthMethod>(_.spec, "4bb20012-5075-11ec-a4d8-8d68ff295d1d", _.syntax.literal);
+const $AuthMethod = $.makeType<$AuthMethod>(_.spec, "f0a2f7b2-533a-11ec-8f6b-190ab56e8564", _.syntax.literal);
 
 const AuthMethod: $.$expr_PathNode<$.TypeSet<$AuthMethod, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($AuthMethod, $.Cardinality.Many), null, true);
 
 export type $ConfigλShape = $.typeutil.flatten<$AbstractConfigλShape & {
 }>;
 type $Config = $.ObjectType<"cfg::Config", $ConfigλShape, null>;
-const $Config = $.makeType<$Config>(_.spec, "4c1feaf0-5075-11ec-ad93-0d30325bf1d4", _.syntax.literal);
+const $Config = $.makeType<$Config>(_.spec, "f123469c-533a-11ec-8142-99d4fe6c98c0", _.syntax.literal);
 
 const Config: $.$expr_PathNode<$.TypeSet<$Config, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($Config, $.Cardinality.Many), null, true);
 
 export type $DatabaseConfigλShape = $.typeutil.flatten<$AbstractConfigλShape & {
 }>;
 type $DatabaseConfig = $.ObjectType<"cfg::DatabaseConfig", $DatabaseConfigλShape, null>;
-const $DatabaseConfig = $.makeType<$DatabaseConfig>(_.spec, "4c86eae8-5075-11ec-9c25-cd5de7fc1863", _.syntax.literal);
+const $DatabaseConfig = $.makeType<$DatabaseConfig>(_.spec, "f18fd4ce-533a-11ec-85d0-a388855506f2", _.syntax.literal);
 
 const DatabaseConfig: $.$expr_PathNode<$.TypeSet<$DatabaseConfig, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($DatabaseConfig, $.Cardinality.Many), null, true);
 
 export type $InstanceConfigλShape = $.typeutil.flatten<$AbstractConfigλShape & {
 }>;
 type $InstanceConfig = $.ObjectType<"cfg::InstanceConfig", $InstanceConfigλShape, null>;
-const $InstanceConfig = $.makeType<$InstanceConfig>(_.spec, "4c533d60-5075-11ec-87fe-e7b235671023", _.syntax.literal);
+const $InstanceConfig = $.makeType<$InstanceConfig>(_.spec, "f159f232-533a-11ec-ba1c-cfc0295c419c", _.syntax.literal);
 
 const InstanceConfig: $.$expr_PathNode<$.TypeSet<$InstanceConfig, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($InstanceConfig, $.Cardinality.Many), null, true);
 
 export type $SCRAMλShape = $.typeutil.flatten<$AuthMethodλShape & {
 }>;
 type $SCRAM = $.ObjectType<"cfg::SCRAM", $SCRAMλShape, null>;
-const $SCRAM = $.makeType<$SCRAM>(_.spec, "4bcfdb8c-5075-11ec-85a3-073f9277f4b5", _.syntax.literal);
+const $SCRAM = $.makeType<$SCRAM>(_.spec, "f0c13740-533a-11ec-8b63-af6385c58e44", _.syntax.literal);
 
 const SCRAM: $.$expr_PathNode<$.TypeSet<$SCRAM, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($SCRAM, $.Cardinality.Many), null, true);
 
 export type $TrustλShape = $.typeutil.flatten<$AuthMethodλShape & {
 }>;
 type $Trust = $.ObjectType<"cfg::Trust", $TrustλShape, null>;
-const $Trust = $.makeType<$Trust>(_.spec, "4bc3e78c-5075-11ec-b3e9-c787fd850f0f", _.syntax.literal);
+const $Trust = $.makeType<$Trust>(_.spec, "f0b28ee8-533a-11ec-8f04-219f6fb4f0f1", _.syntax.literal);
 
 const Trust: $.$expr_PathNode<$.TypeSet<$Trust, $.Cardinality.Many>, null, true> = _.syntax.$expr_PathNode($.$toSet($Trust, $.Cardinality.Many), null, true);
 
@@ -110,7 +110,7 @@ function get_config_json<
   namedArgs: NamedArgs,
 ): get_config_jsonλFuncExpr<NamedArgs>;
 function get_config_json(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('cfg::get_config_json', args, _.spec, [
     {args: [], namedArgs: {"sources": {typeId: "05f91774-15ea-9001-038e-092c1cad80af", optional: true, setoftype: false, variadic: false}, "max_source": {typeId: "00000000-0000-0000-0000-000000000101", optional: true, setoftype: false, variadic: false}}, returnTypeId: "00000000-0000-0000-0000-00000000010f"},
   ]);
   return _.syntax.$expressionify({

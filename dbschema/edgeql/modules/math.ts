@@ -1,7 +1,7 @@
 import { $ } from "edgedb";
 import * as _ from "../imports";
 import * as _std from "./std";
-type var_4ad707b5507511ec89dbf58396b3b548λFuncExpr<
+type var_ef8e8de6533a11eca309dff0c9fe821fλFuncExpr<
   P1 extends $.TypeSet<_std.$int64λICastableTo>,
 > = _.syntax.$expr_Function<
   "math::var",
@@ -9,7 +9,7 @@ type var_4ad707b5507511ec89dbf58396b3b548λFuncExpr<
   {},
   $.TypeSet<_std.$float64, $.cardinalityUtil.overrideLowerBound<$.Cardinality.One, 'Zero'>>
 >;
-type var_4ad707b5507511ec89dbf58396b3b548λFuncExpr2<
+type var_ef8e8de6533a11eca309dff0c9fe821fλFuncExpr2<
   P1 extends $.TypeSet<_std.$float64λICastableTo>,
 > = _.syntax.$expr_Function<
   "math::var",
@@ -17,7 +17,7 @@ type var_4ad707b5507511ec89dbf58396b3b548λFuncExpr2<
   {},
   $.TypeSet<_std.$float64, $.cardinalityUtil.overrideLowerBound<$.Cardinality.One, 'Zero'>>
 >;
-type var_4ad707b5507511ec89dbf58396b3b548λFuncExpr3<
+type var_ef8e8de6533a11eca309dff0c9fe821fλFuncExpr3<
   P1 extends $.TypeSet<_std.$decimalλICastableTo>,
 > = _.syntax.$expr_Function<
   "math::var",
@@ -28,29 +28,29 @@ type var_4ad707b5507511ec89dbf58396b3b548λFuncExpr3<
 /**
  * Return the sample variance of the input set.
  */
-function var_4ad707b5507511ec89dbf58396b3b548<
+function var_ef8e8de6533a11eca309dff0c9fe821f<
   P1 extends $.TypeSet<_std.$int64λICastableTo>,
 >(
   vals: P1,
-): var_4ad707b5507511ec89dbf58396b3b548λFuncExpr<P1>;
+): var_ef8e8de6533a11eca309dff0c9fe821fλFuncExpr<P1>;
 /**
  * Return the sample variance of the input set.
  */
-function var_4ad707b5507511ec89dbf58396b3b548<
+function var_ef8e8de6533a11eca309dff0c9fe821f<
   P1 extends $.TypeSet<_std.$float64λICastableTo>,
 >(
   vals: P1,
-): var_4ad707b5507511ec89dbf58396b3b548λFuncExpr2<P1>;
+): var_ef8e8de6533a11eca309dff0c9fe821fλFuncExpr2<P1>;
 /**
  * Return the sample variance of the input set.
  */
-function var_4ad707b5507511ec89dbf58396b3b548<
+function var_ef8e8de6533a11eca309dff0c9fe821f<
   P1 extends $.TypeSet<_std.$decimalλICastableTo>,
 >(
   vals: P1,
-): var_4ad707b5507511ec89dbf58396b3b548λFuncExpr3<P1>;
-function var_4ad707b5507511ec89dbf58396b3b548(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+): var_ef8e8de6533a11eca309dff0c9fe821fλFuncExpr3<P1>;
+function var_ef8e8de6533a11eca309dff0c9fe821f(...args: any[]) {
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::var', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107", returnTypemod: "OptionalType"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107", returnTypemod: "OptionalType"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000108", returnTypemod: "OptionalType"},
@@ -82,8 +82,8 @@ function abs<
   x: P1,
 ): absλFuncExpr<P1>;
 function abs(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
-    {args: [{typeId: "3eadc9aa-5075-11ec-b5c4-af895c68219f", optional: false, setoftype: false, variadic: false}], returnTypeId: "3eadc9aa-5075-11ec-b5c4-af895c68219f"},
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::abs', args, _.spec, [
+    {args: [{typeId: "e181adc8-533a-11ec-9860-675dabf4e0ee", optional: false, setoftype: false, variadic: false}], returnTypeId: "e181adc8-533a-11ec-9860-675dabf4e0ee"},
   ]);
   return _.syntax.$expressionify({
     __kind__: $.ExpressionKind.Function,
@@ -160,7 +160,7 @@ function ceil<
   x: P1,
 ): ceilλFuncExpr4<P1>;
 function ceil(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::ceil', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000105"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000110", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000110"},
@@ -241,7 +241,7 @@ function floor<
   x: P1,
 ): floorλFuncExpr4<P1>;
 function floor(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::floor', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000105"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000110", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000110"},
@@ -306,7 +306,7 @@ function ln<
   x: P1,
 ): lnλFuncExpr3<P1>;
 function ln(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::ln', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000108"},
@@ -370,7 +370,7 @@ function lg<
   x: P1,
 ): lgλFuncExpr3<P1>;
 function lg(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::lg', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000108"},
@@ -409,7 +409,7 @@ function log<
   x: P1,
 ): logλFuncExpr<NamedArgs, P1>;
 function log(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::log', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: false, variadic: false}], namedArgs: {"base": {typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: false, variadic: false}}, returnTypeId: "00000000-0000-0000-0000-000000000108"},
   ]);
   return _.syntax.$expressionify({
@@ -471,7 +471,7 @@ function mean<
   vals: P1,
 ): meanλFuncExpr3<P1>;
 function mean(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::mean', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000108"},
@@ -535,7 +535,7 @@ function stddev<
   vals: P1,
 ): stddevλFuncExpr3<P1>;
 function stddev(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::stddev', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000108"},
@@ -599,7 +599,7 @@ function stddev_pop<
   vals: P1,
 ): stddev_popλFuncExpr3<P1>;
 function stddev_pop(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::stddev_pop', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000108"},
@@ -663,7 +663,7 @@ function var_pop<
   vals: P1,
 ): var_popλFuncExpr3<P1>;
 function var_pop(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('math::var_pop', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107", returnTypemod: "OptionalType"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107", returnTypemod: "OptionalType"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000108", optional: false, setoftype: true, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000108", returnTypemod: "OptionalType"},
@@ -681,7 +681,7 @@ function var_pop(...args: any[]) {
 
 
 type __defaultExports = {
-  "var": typeof var_4ad707b5507511ec89dbf58396b3b548;
+  "var": typeof var_ef8e8de6533a11eca309dff0c9fe821f;
   "abs": typeof abs;
   "ceil": typeof ceil;
   "floor": typeof floor;
@@ -694,7 +694,7 @@ type __defaultExports = {
   "var_pop": typeof var_pop
 };
 const __defaultExports: __defaultExports = {
-  "var": var_4ad707b5507511ec89dbf58396b3b548,
+  "var": var_ef8e8de6533a11eca309dff0c9fe821f,
   "abs": abs,
   "ceil": ceil,
   "floor": floor,

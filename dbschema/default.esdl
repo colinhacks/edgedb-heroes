@@ -18,7 +18,7 @@ module default {
   }
 
   type Movie {
-    required property title -> str { constraint exclusive; }
+    required property title -> str;
     property release_year -> int64;
     multi link characters -> Person;
   }

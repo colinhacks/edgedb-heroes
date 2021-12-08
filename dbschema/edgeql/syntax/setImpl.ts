@@ -9,6 +9,7 @@ import type {
   ObjectTypeSet,
   PrimitiveTypeSet,
   AnyTupleType,
+  getPrimitiveBaseType,
 } from "edgedb/dist/reflection";
 import type {
   $expr_Set,
@@ -17,7 +18,6 @@ import type {
   getTypesFromObjectExprs,
   getCardsFromExprs,
   getSharedParentPrimitiveVariadic,
-  getPrimitiveBaseType,
   LooseTypeSet,
 } from "./set";
 type getSetTypeFromExprs<

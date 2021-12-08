@@ -10,7 +10,7 @@ const local_datetime: $local_datetime = $.makeType<$local_datetime>(_.spec, "000
 export type $local_time = $.ScalarType<"cal::local_time", _.edgedb.LocalTime>;
 const local_time: $local_time = $.makeType<$local_time>(_.spec, "00000000-0000-0000-0000-00000000010d", _.syntax.literal);
 
-export type $relative_duration = $.ScalarType<"cal::relative_duration", unknown>;
+export type $relative_duration = $.ScalarType<"cal::relative_duration", _.edgedb.RelativeDuration>;
 const relative_duration: $relative_duration = $.makeType<$relative_duration>(_.spec, "00000000-0000-0000-0000-000000000111", _.syntax.literal);
 
 type to_local_datetimeλFuncExpr<
@@ -83,7 +83,7 @@ function to_local_datetime<
   sec: P6,
 ): to_local_datetimeλFuncExpr3<P1, P2, P3, P4, P5, P6>;
 function to_local_datetime(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('cal::to_local_datetime', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: true, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010b"},
     {args: [{typeId: "00000000-0000-0000-0000-00000000010a", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010b"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010b"},
@@ -159,7 +159,7 @@ function to_local_date<
   day: P3,
 ): to_local_dateλFuncExpr3<P1, P2, P3>;
 function to_local_date(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('cal::to_local_date', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: true, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010c"},
     {args: [{typeId: "00000000-0000-0000-0000-00000000010a", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010c"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010c"},
@@ -235,7 +235,7 @@ function to_local_time<
   sec: P3,
 ): to_local_timeλFuncExpr3<P1, P2, P3>;
 function to_local_time(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('cal::to_local_time', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: true, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010d"},
     {args: [{typeId: "00000000-0000-0000-0000-00000000010a", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010d"},
     {args: [{typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000105", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000107", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-00000000010d"},
@@ -270,7 +270,7 @@ function time_get<
   el: P2,
 ): time_getλFuncExpr<P1, P2>;
 function time_get(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('cal::time_get', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-00000000010d", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
   ]);
   return _.syntax.$expressionify({
@@ -303,7 +303,7 @@ function date_get<
   el: P2,
 ): date_getλFuncExpr<P1, P2>;
 function date_get(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('cal::date_get', args, _.spec, [
     {args: [{typeId: "00000000-0000-0000-0000-00000000010c", optional: false, setoftype: false, variadic: false}, {typeId: "00000000-0000-0000-0000-000000000101", optional: false, setoftype: false, variadic: false}], returnTypeId: "00000000-0000-0000-0000-000000000107"},
   ]);
   return _.syntax.$expressionify({
@@ -349,7 +349,7 @@ function to_relative_duration<
   namedArgs: NamedArgs,
 ): to_relative_durationλFuncExpr<NamedArgs>;
 function to_relative_duration(...args: any[]) {
-  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload(args, _.spec, [
+  const {returnType, cardinality, args: positionalArgs, namedArgs} = _.syntax.$resolveOverload('cal::to_relative_duration', args, _.spec, [
     {args: [], namedArgs: {"years": {typeId: "00000000-0000-0000-0000-000000000105", optional: true, setoftype: false, variadic: false}, "months": {typeId: "00000000-0000-0000-0000-000000000105", optional: true, setoftype: false, variadic: false}, "days": {typeId: "00000000-0000-0000-0000-000000000105", optional: true, setoftype: false, variadic: false}, "hours": {typeId: "00000000-0000-0000-0000-000000000105", optional: true, setoftype: false, variadic: false}, "minutes": {typeId: "00000000-0000-0000-0000-000000000105", optional: true, setoftype: false, variadic: false}, "seconds": {typeId: "00000000-0000-0000-0000-000000000107", optional: true, setoftype: false, variadic: false}, "microseconds": {typeId: "00000000-0000-0000-0000-000000000105", optional: true, setoftype: false, variadic: false}}, returnTypeId: "00000000-0000-0000-0000-000000000111"},
   ]);
   return _.syntax.$expressionify({

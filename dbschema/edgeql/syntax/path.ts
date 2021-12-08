@@ -7,6 +7,7 @@ import {
   TypeKind,
   LinkDesc,
   PropertyDesc,
+  Cardinality,
 } from "edgedb/dist/reflection";
 import {
   PathParent,
@@ -17,8 +18,6 @@ import {
 } from "edgedb/dist/reflection/path";
 
 import {$toEdgeQL} from "./toEdgeQL";
-
-import _std from "../modules/std";
 
 function _$expr_PathLeaf<
   Root extends TypeSet,
@@ -70,8 +69,19 @@ function _$pathify<Root extends TypeSet, Parent extends PathParent>(
 
   (root as any)[pathCache] = {};
 
-  for (const line of Object.entries(root.__element__.__pointers__ as any)) {
-    const [key, _ptr] = line;
+  let pointers = {
+    ...root.__element__.__pointers__,
+  };
+
+  if (root.__parent__) {
+    const {type, linkName} = root.__parent__;
+    const parentPointer = type.__element__.__pointers__[linkName];
+    if (parentPointer?.__kind__ === "link") {
+      pointers = {...pointers, ...parentPointer.properties};
+    }
+  }
+
+  for (const [key, _ptr] of Object.entries(pointers)) {
     const ptr: LinkDesc | PropertyDesc = _ptr as any;
     if ((ptr as any).__kind__ === "property") {
       Object.defineProperty(root, key, {
@@ -90,7 +100,7 @@ function _$pathify<Root extends TypeSet, Parent extends PathParent>(
                 linkName: key,
                 type: root,
               },
-              ptr.exclusive
+              ptr.exclusive ?? false
             ))
           );
         },
@@ -137,6 +147,20 @@ function isFunc(this: any, expr: ObjectTypeSet) {
   });
 }
 
+function assert_single(expr: Expression) {
+  return $expressionify({
+    __kind__: ExpressionKind.Function,
+    __element__: expr.__element__,
+    __cardinality__: cardinalityUtil.overrideUpperBound(
+      expr.__cardinality__,
+      "One"
+    ),
+    __name__: "std::assert_single",
+    __args__: [expr],
+    __namedargs__: {},
+  }) as any;
+}
+
 export function $expressionify<T extends ExpressionRoot>(
   _expr: T
 ): Expression<T> {
@@ -144,8 +168,24 @@ export function $expressionify<T extends ExpressionRoot>(
   expr.$is = isFunc.bind(expr) as any;
   expr.toEdgeQL = $toEdgeQL.bind(expr);
   _$pathify(expr);
-  expr.$assertSingle = () => _std.assert_single(expr) as any;
+  expr.$assertSingle = () => assert_single(expr) as any;
   return Object.freeze(expr) as any;
+}
+
+const scopedExprCache = new WeakMap<ExpressionRoot, Expression>();
+
+export function $getScopedExpr<T extends ExpressionRoot>(
+  expr: T
+): Expression<T> {
+  let scopedExpr = scopedExprCache.get(expr);
+  if (!scopedExpr) {
+    scopedExpr = $expressionify({
+      ...expr,
+      __cardinality__: Cardinality.One,
+    });
+    scopedExprCache.set(expr, scopedExpr);
+  }
+  return scopedExpr as any;
 }
 
 export {

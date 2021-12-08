@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "play": "tsc --incremental && node dist/index.js",
+    "run:index": "tsc --incremental && node dist/index.js",
+    "play": "tsc --incremental && node dist/playground.js",
     "seed": "ts-node seed.ts",
     "build": "tsc --incremental"
   },
@@ -13,11 +14,13 @@
   "author": "Colin McDonnell",
   "license": "ISC",
   "dependencies": {
-    "edgedb": "^0.17.0-alpha.3"
+    "edgedb": "^0.18.0-alpha.5",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.1",
+    "@types/node": "^16.11.12",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "typescript": "4.5"
   }
 }
